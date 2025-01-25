@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background: linear-gradient(45deg, #1e1e2f, #1e3a8a);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        header .title {
+            display: flex;
+            flex-direction: column;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        header p {
+            margin: 5px 0 0;
+            font-size: 1rem;
+            color: #b3b3b3;
+        }
+
+        header .links {
+            display: flex;
+            gap: 20px;
+        }
+
+        header .links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+
+        header .links a:hover {
+            color: #1e90ff;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            padding: 20px 40px;
+        }
+
+        .zigzag {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: center;
+            
+        }
+
+        .zigzag:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .media {
+            flex: 1;
+            max-width: 40%; /* Reduced max-width */
+            resize: both;
+            overflow: auto;
+        }
+
+        .media img,
+        .media video {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .media img:hover,
+        .media video:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .content {
+            flex: 1;
+            max-width: 40%; /* Reduced max-width */
+            padding: 20px;
+        }
+
+        .content h3 {
+            margin: 0 0 10px;
+            font-size: 1.5rem;
+            color: #ffffff;
+        }
+
+        .content p {
+            margin: 0;
+            font-size: 1rem;
+            color: #b3b3b3;
+        }
+
+        .videos-section {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .videos-section .video-card {
+            flex: 1;
+            max-width: calc(25% - 20px); /* Reduced max-width */
+            background-color: #000000;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            resize: both;
+            overflow: auto;
+        }
+
+        .videos-section .video-card video {
+            width: 100%;
+            height: auto;
+            border-bottom: 3px solid #333;
+        }
+
+        .videos-section .video-card p {
+            margin: 10px 0;
+            font-size: 1rem;
+            color: #b3b3b3;
+        }
+
+        .contact {
+            background-color: #1e1e1e;
+            padding: 20px 40px;
+            margin-top: 40px;
+            border-top: 1px solid #333;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+
+        .contact p {
+            font-size: 1rem;
+            color: #b3b3b3;
+            margin: 5px 0;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            header p {
+                font-size: 1rem;
+            }
+
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            header .links {
+                margin-top: 10px;
+            }
+
+            .media,
+            .content {
+                max-width: 100%;
+            }
+
+            .zigzag {
+                flex-direction: column !important;
+            }
+
+            .videos-section {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .videos-section .video-card {
+                max-width: 100%;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .zigzag {
+            animation: fadeInUp 0.6s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="title">
+            <h1>Sithija Vihanga Ranaraja</h1>
+            <p>4th year undergraduate of B.Sc.(Hons) in Electronic and Telecommunication Engineering in University of Moratuwa.</p>
+        </div>
+        <div class="links">
+            <a href="https://github.com/sithija-vihanga/" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+            <a href="https://www.linkedin.com/in/sithija-ranaraja-984603213/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="zigzag">
+            <div class="media">
+                <video controls autoplay loop muted>
+                    <source src="resources/multinav_sim.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="content">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <h3>Mobile Robot Receptionist 2.0</h3>
+                    <span style="font-weight: bold; font-size: 1rem;">2024 - Ongoing</span>
+                </div>
+                <ul>
+                    <li>Designed a multi-floor navigation framework expanding 2D mapping and navigation techniques.</li>
+                    <li>Developed Gazebo plugins for elevator simulations and implemented behavior trees for automating multi-floor navigation, including elevator interactions.</li>
+                    <li>Implemented the Nav2 stack and SLAM toolbox for the robots; worked on hardware integration and testing.</li>
+                    <li>Replicated research on human goal prediction and tested the implementation to enhance the crowd navigation algorithm.</li>
+                </ul>
+            </div>
+        </div>
+
+      
+        <div class="videos-section">
+            <div class="video-card">
+                <video controls autoplay loop muted>
+                    <source src="resources/gazebo_elevator.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p>Custom Gazebo plugin designed for elevator simulation from scratch</p>
+            </div>
+            <div class="video-card">
+                <img src="resources/sansa.jpg" alt="Description of the portrait image" style="width: 250px; height: 300px; object-fit: cover;">
+                <p>SANSA - mobile robot receptionist</p>
+            </div>
+            <div class="video-card">
+                <video style="width: 200px; height: 300px; object-fit: cover;" controls autoplay loop muted>
+                    <source src="resources/teleop01.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p>Teleop navigation testing with ROS2</p>
+            </div>
+            <div class="video-card">
+                <video controls autoplay loop muted>
+                    <source src="resources/goal_predictor.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p>Goal predictor algorithm implementation based on IMPC research.</p>
+            </div>
+        </div>
+
+        <!-- New Zigzag Section -->
+        <div class="zigzag">
+            <div class="media">
+                <video controls autoplay loop muted>
+                    <source src="resources/voyager.MP4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="content">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <h3>Voyager: mobile robot platform</h3>
+                    <span style="font-weight: bold; font-size: 1rem;">2024 - 2025</span>
+                </div>
+                <ul>
+                    <li>Developed robot simulations with SLAM, Nav2 and teleop from scratch with ROS2 and Gazebo.</li>
+                    <li> Designed SolidWorks enclosure and assembled the robot hardware.</li>
+                    <li> Integrated custom sensors (wheel encoders, lidar, and camera), hardware interfaces and tested SLAM and
+                        navigation stack.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="videos-section">
+            <div class="video-card">
+                <video controls autoplay loop muted>
+                    <source src="resources/voyager_teleop.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p>Robot teleop testing with diff-drive controller and camera positional controllers.</p>
+            </div>
+
+            <div class="video-card">
+                <video  controls autoplay loop muted>
+                    <source src="resources/voyager_assembly.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p>Custom designed SolidWorks assembly</p>
+            </div>
+
+            
+            <div class="video-card">
+                <video  controls autoplay loop muted>
+                    <source src="resources/voyager_hardware.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p>Robot hardware integration and testing</p>
+            </div>
+
+            <div class="video-card">
+                <video controls autoplay loop muted>
+                    <source src="resources/voyager_lidar.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p>Lidar sensor integration and testing</p>
+            </div>
+        </div>
+
+
+        <!-- Another Zigzag Section -->
+        <div class="zigzag">
+            <div class="media">
+                <video controls autoplay loop muted>
+                    <source src="resources/hydra.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="content">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <h3>Hydra: 6 DOF robot manipulator</h3>
+                    <span style="font-weight: bold; font-size: 1rem;">2024 - Ongoing</span>
+                </div>
+                <ul>
+                    <li> Developed ROS2 workspace for manipulator simulations with Moveit2.</li>
+                    <li> Designed the robot in SolidWorks, assembled the manipulator and tested the hardware interface.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="videos-section">
+            <div class="video-card">
+                <video controls autoplay loop muted>
+                    <source src="resources/hydra_assembly.mov" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p>Modified manipulator design in SolidWorks</p>
+            </div>
+
+            <div class="video-card">
+                <video  controls autoplay loop muted>
+                    <source src="resources/hydra_sim.mov" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p>Manipulator controls through RViz and joint state publisher</p>
+            </div>
+
+            
+            <div class="video-card">
+                <video  controls autoplay loop muted>
+                    <source src="resources/hydra_hardware.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p>Manipulator hardware testing</p>
+            </div>
+
+            <div class="video-card">
+                <video controls autoplay loop muted>
+                    <source src="resources/hydra_moveit.mov" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p>Moveit 2 integration and trajectory planning test</p>
+            </div>
+        </div>
+
+    <div class="zigzag">
+        <div class="media">
+            <div class="video-card">
+                <img src="resources/roboroarz_group.jpeg" alt="Description of the portrait image" >
+            </div>
+        </div>
+        <div class="content">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <h3> RoboRoarz Robot Challenge, Singapore </h3>
+                <span style="font-weight: bold; font-size: 1rem;">2024</span>
+            </div>
+            <ul>
+                <li> Developed algorithms in C++ for Smorphi reconfigurable robot platform.</li>
+                <li> Designed reconfigurable robot concepts for disaster management.</li>
+                <li> Participated in robotics workshops, gaining hands-on experience in robot development.</li>
+            </ul>
+        </div>
+    </div>
+
+        <div class="videos-section">
+            <div class="video-card">
+                
+                    <img src="resources/roboroarz_design.jpeg" alt="Description of the portrait image" style="width: 400px; height: 300px; object-fit: cover;" >
+         
+               
+                <p>Reconfigurable custom robot design for disaster management.</p>
+            </div>
+
+            <div class="video-card">
+                
+                    <img src="resources/roboroarz.jpeg" alt="Description of the portrait image" style="width: 400px; height: 200px; object-fit: cover;" >
+                    
+                
+                <p>Team Spectro</p>
+            </div>
+
+            
+            <div class="video-card">
+                <video  controls autoplay loop muted>
+                    <source src="resources/roboroarz_awards.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p>Roboroarz award ceremony</p>
+            </div>
+
+            <div class="video-card">
+                    <img src="resources/roboroarz_robot.jpeg" alt="Description of the portrait image"  style="width: 400px; height: 200px; object-fit: cover;" >
+                <p>Reconfigurable robot assembly and workshops</p>
+            </div>
+        </div>
+
+        <div class="zigzag">
+            <div class="media">
+                <img src="resources/slrc23.jpg" alt="Description of the portrait image" >
+            </div>
+            <div class="content">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <h3> Sri Lankan Robotics Challenge (University Category)</h3>
+                    <span style="font-weight: bold; font-size: 1rem;">2022</span>
+                </div>
+                <ul>
+                    <li> Implemented algorithms to solve the tower of Hanoi using custom manipulators.</li>
+                    <li> Designed robot hardware configurations and tested software and hardware setup.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="videos-section">
+            <div class="video-card">
+                <video controls autoplay loop muted>
+                    <source src="resources/slrc_competition.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p>Competing in SLRC</p>
+            </div>
+
+            <div class="video-card">
+                <video  controls autoplay loop muted>
+                    <source src="resources/slrc_maze.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p>Maze navigation and manipulator functionalities</p>
+            </div>
+
+            
+            <div class="video-card">
+                <video  controls autoplay loop muted>
+                    <source src="resources/slrc_linefollow.mp4" type="video/mp4" >
+                    Your browser does not support the video tag.
+                </video>
+                <p>Line following testing</p>
+            </div>
+
+            <div class="video-card">
+                <img src="resources/slrc_robot.jpg" alt="Description of the portrait image"  style="width: 350px; height: 250px; object-fit: cover;" >
+                <p>Our robot for SLRC</p>
+            </div>
+        </div>
+
+
+        <div class="contact">
+            <h2>Contact Me</h2>
+            <p>Email: sithija.vihanga28@gmail.com</p>
+            <p>Phone: +94 71 1500725</p>
+            <p>Location: Gampaha, Sri Lanka</p>
+        </div>
+    </div>
+</body>
+</html>
